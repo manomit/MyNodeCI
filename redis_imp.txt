@@ -1,0 +1,27 @@
+const redis = require('redis')
+const redisUrl = 'redis://127.0.0.1:6379'
+const client = redis.createClient(redisUrl)
+
+client.set('hi','there')
+client.set('hi','there', 'EX', 5)
+
+client.get('hi', (err, value) => console.log(value))
+or client.get('hi', console.log)
+
+** redis hash**
+
+const redisValues = {
+	spanish: {
+		red: 'rojo',
+		orange: 'naranja',
+		blue: 'azul'
+	},
+	germane: {
+		red: 'rot',
+		orange: 'orange',
+		blue: 'blau'
+	}
+};
+
+client.hset('germane','red','rot')
+client.hget('germane','get',console.log)

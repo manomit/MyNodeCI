@@ -1,0 +1,10 @@
+****travis setup**
+
+at first remove any git repo if present by using command : git remote remove origin
+then add new repo link : git remote add origin link
+
+then go to travis-ci.org and sign in with github
+
+add git repo by clicking on (+) sign
+
+push work to github
